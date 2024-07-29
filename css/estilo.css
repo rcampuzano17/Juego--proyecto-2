@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    overflow: hidden;
+    background: linear-gradient(45deg, #000080, #00bfff, #000080, #1e90ff); /* Colores de fondo de ejemplo */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparente para mejor legibilidad */
+    padding: 20px;
+    margin: auto;
+}
+
+#question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.answer-container {
+    display: flex;
+    justify-content: center;
+}
+
+.answer-btn {
+    display: block;
+    width: 100%; /* Llenar el contenedor */
+    height: 60px; /* Altura de los botones */
+    text-align: center;
+    border: 2px solid #007bff;
+    border-radius: 10px; /* Esquinas redondeadas */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño del texto más pequeño */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.answer-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.correct {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.correct::after {
+    content: ' ✓';
+    color: green;
+}
+
+.incorrect {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.incorrect::after {
+    content: ' ✗';
+    color: red;
+}
+
+#timer {
+    font-size: 2rem;
+}
+
+#question-number {
+    font-size: 1.5rem;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+}
